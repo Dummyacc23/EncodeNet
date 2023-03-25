@@ -1,64 +1,64 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[310]:
+# In[ ]:
 
 
-get_ipython().system('python3 --version ')
 
 
-# In[2]:
+
+# In[ ]:
 
 
-ls
 
 
-# In[3]:
+
+# In[ ]:
 
 
-get_ipython().system('mkdir branchynet ')
 
 
-# In[4]:
+
+# In[ ]:
 
 
-cd branchynet/
+
 
 
 # In[1]:
 
 
-ls
 
 
-# In[7]:
+
+# In[ ]:
 
 
-get_ipython().system('git clone https://github.com/max2022/B_net.git')
 
 
-# In[8]:
+
+# In[ ]:
 
 
-cd B_net/
+
 
 
 # In[9]:
 
 
-ls
+
 
 
 # In[10]:
 
 
-get_ipython().system('python2 lenet_script.py')
 
 
-# In[11]:
+
+# In[ ]:
 
 
-get_ipython().system('pip install -r requirements.txt')
+
 
 
 # In[12]:
@@ -70,31 +70,31 @@ get_ipython().system('pip2 install virtualenv')
 # In[13]:
 
 
-get_ipython().system('virtualenv venv')
+
 
 
 # In[14]:
 
 
-get_ipython().system('virtualenv -p /usr/bin/python2.7 venv')
+
 
 
 # In[16]:
 
 
-get_ipython().system('export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2.7')
+
 
 
 # In[18]:
 
 
-get_ipython().system('source venv/bin/activate')
+
 
 
 # In[19]:
 
 
-get_ipython().system('pip2 install -r requirements.txt')
+
 
 
 # In[ ]:
@@ -160,26 +160,16 @@ label = np.array(X2)
 dataset = pd.DataFrame({'label': label,'images': list(images)})
 
 
-# In[7]:
+# In[ ]:
 
 
-Sum_of_squared_distances = []
-K = range(1,10)
-for num_clusters in K :
- kmeans = KMeans(n_clusters=num_clusters)
- kmeans.fit(dataset)
- Sum_of_squared_distances.append(kmeans.inertia_)
-plt.plot(K,Sum_of_squared_distances,'bx-')
-plt.xlabel('Values of K') 
-plt.ylabel('Sum of squared distances/Inertia') 
-plt.title('Elbow Method For Optimal k')
-plt.show()
 
 
-# In[8]:
+
+# In[ ]:
 
 
-dataset
+
 
 
 # In[9]:
@@ -818,33 +808,16 @@ if __name__ == '__main__':
 
 
 
-# In[185]:
+# In[ ]:
 
 
-def isIsomorphic( s, t):
-        mapping_s_t = {}
-        mapping_t_s = {}
-        for c1, c2 in zip(s, t):
-            # Case 1: No mapping exists in either of the dictionaries
-            if (c1 not in mapping_s_t) and (c2 not in mapping_t_s):
-                mapping_s_t[c1] = c2
-                mapping_t_s[c2] = c1
-                print(c1)
-                print(c2)
-            # Case 2: Ether mapping doesn't exist in one of the dictionaries or Mapping exists and
-            # it doesn't match in either of the dictionaries or both            
-            elif mapping_s_t.get(c1) != c2 or mapping_t_s.get(c2) != c1:
-                print(mapping_s_t.get(c1))
-                print(mapping_t_s.get(c2))
-                return False
-
-        return True
 
 
-# In[193]:
+
+# In[ ]:
 
 
-isIsomorphic("paper","title")
+
 
 
 # In[ ]:
@@ -856,31 +829,19 @@ isIsomorphic("paper","title")
 # In[268]:
 
 
-def isPowerOfTwo(n):
-        count=0
-        x = n
-        while(n//2>0):
-            n=n//2
-            print(n)
-            count+=1
-        num = pow(2,count)
-        print(num)
-        if(num==x):
-            return True
-        else:
-            False
 
 
-# In[269]:
+
+# In[ ]:
 
 
-just=isPowerOfTwo(16)
+
 
 
 # In[219]:
 
 
-print(just)
+
 
 
 # In[220]:
@@ -963,73 +924,42 @@ dae.compile(loss='huber_loss', optimizer='adam')
 dae.summary()
 
 
-# In[245]:
+# In[ ]:
 
 
-str2="abc"
 
 
-# In[246]:
+
+# In[ ]:
 
 
-str2= str2-"b"
 
 
-# In[253]:
+
+# In[ ]:
 
 
-def canConstruct(ransomNote, magazine):
-       
-       len1 = len(ransomNote)
-       len2 = len(magazine)
-       print(len1)
-       print(len2)
-       
-       if len2 <len1:
-           return False
-       
-       for idx in ransomNote:
-           if(idx not in magazine):
-               return False
-           magazine = magazine.replace(idx,"h")
-           print(magazine)
-       
-       return True
+
 
 
 # In[254]:
 
 
-canConstruct("aa","ab")
-
-
-# In[266]:
 
 
 
-def addDigits(num):
-        
-    def add_digits(n):
-        sum =0
-        while(n>0):
-            rem=n%10
-            n=n//10   
-            sum= rem+sum
-            print(sum)
-        return sum
-        
-    while((num//10)>0):
-        num=add_digits(num)
-            
-            
-    return num
+# In[ ]:
+
+
+
+
         
 
 
-# In[311]:
+# In[ ]:
 
 
-addDigits(38)
+
 
 
 # In[265]:
@@ -1143,212 +1073,106 @@ print(zipped)
 
 
 
-# In[304]:
+# In[ ]:
 
 
-zipped = zip(x, y)
-# >>> [(1, 4), (2, 5), (3, 6)]
-
-# Save the array back to the file
-np.savetxt('z.csv', zipped, fmt='%i,%i')
 
 
-# In[308]:
+
+# In[ ]:
 
 
-import numpy
 
-
-list1 = [1, 2, 3, 4]
-
-list2 = [0.45, 0.98, 0.89, 0.21]
-
-list3= [0.45, 0.98, 0.89, 0.21]
-
-dat = numpy.array([list1, list2,list3])
-
-dat = dat.T
-
-numpy.savetxt('data.txt', dat, delimiter = '  ,   ')
 
 
 # In[319]:
 
 
-pow(3,2)
 
 
-# In[320]:
+
+# In[ ]:
 
 
-get_ipython().system('pip3 install tensorflow-probability')
 
 
-# In[323]:
+
+# In[ ]:
 
 
-def toLowerCase(s):
-    d = ''
-    for i in s:
-        if i in 'QWERTYUIOPASDFGHJKLZXCVBNM':
-            d += chr(ord(i) + 32)
-        elif i in 'qwertyuiopasdfghjklzxcvbnm':
-            d += i
-        else:
-            d+=i
-    return d
 
-
-s1 = 'al&phaBET'
-print(toLowerCase(s1))
 
 
 # In[325]:
 
 
-s="bnbsbnbnbdnbd"
-t="qwb"
 
-
-# In[326]:
-
-
-for i in s :
-    if (i in t ):
-        print("Yes")
-    else:
-        print("No")
-
-
-# In[327]:
-
-
-s='aaaaaaaa'
-for i in s:
-    print(i)
-
-
-# In[336]:
-
-
-def findWords( words):
-        """
-        :type words: List[str]
-        :rtype: List[str]
-        """
-        ret=[]
-        first_row="qwertyuiopQWERTYUIOP"
-        second_row="asdfghjklASDFGHJKL"
-        third_row="zxcvbnmZXCVBNM"
-        
-        for word in words:
-            count=count1=count2=0
-            #print(word)
-            curr_length=len(word)
-            #print(curr_length)
-            for letter in word:
-                print(letter)
-                if(letter in first_row):
-                    #print(letter)
-                    count+=1
-                elif(letter in second_row):
-                    #print(letter)
-                    count1+=1
-                    
-                elif(letter in third_row):
-                    #print(letter)
-                    count2+=1
-            print(count,count1,count2)        
-            if(count==len(word) or count1==len(word)  or count2==len(word)):
-                ret.append(word)
-        
-        
-        
-        return ret
-
-
-# In[337]:
-
-
-findWords(["Hello","Alaska","Dad","Peace"])
 
 
 # In[ ]:
 
 
-def dfs(self, node):
-    if not node:
-        return []
-    return self.dfs(node.left) + [node.val] + self.dfs(node.right)
 
-def findMode(self, root):
-    ans = self.dfs(root)
-    
-    dict1 = Counter(ans)
-    
-    return [key for key, val in dict1.items() if val == max(dict1.values())]
 
 
 # In[ ]:
 
 
-findMode([1,null,2,2])
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
 
 
 # In[347]:
 
 
-s='abcdef'
-pos=5
-s = s[:pos] + s[(pos+1):]
 
 
-# In[348]:
+
+# In[ ]:
 
 
-print(s)
 
 
-# In[349]:
+
+# In[ ]:
 
 
-s[::-1]
+
 
 
 # In[378]:
 
 
-def validPalindrome(s):
-        """
-        :type s: str
-        :rtype: bool
-        """
-        
-        if s is None:
-            return False
-        
-        print(s[1])
-        i=0
-        j= len(s)-1
-        while(i<j):
-            if(s[i]!=s[j]):
-                temp1 = s[i+1:j+1]
-                temp2= s[i:j+1-1]
-                print(temp1)
-                print(temp2)
 
-                return temp1==temp1[::-1] or temp2==temp2[::-1]
-            i=i+1
-            j=j-1
-        
-        
-        return True
 
 
 # In[380]:
 
 
-validPalindrome("aba")
+
 
 
 # In[ ]:
